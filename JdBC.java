@@ -17,6 +17,10 @@ public class ReadOperation
         // create a statement
         try (Statement statement = connection.createStatement()) 
         {
+            String query2 = " UPDATE employee_payroll  set Emp_BasicPay = '14000', Emp_deduction='1000',Emp_TaxablePay='500', Emp_IncomeTax = '0', Emp_NetPay= 13500 where Emp_Id=10;";
+            statement.executeUpdate(query2);
+            System.out.println("Updation complete");
+            
             // execute SQL query
             String query = "SELECT * FROM employee_payroll;";
             ResultSet resultSet = statement.executeQuery(query);
