@@ -21,6 +21,16 @@ public class ReadOperation
             statement.executeUpdate(query2);
             System.out.println("Updation complete");
             
+              // execute SQL query
+            String query3 = "INSERT INTO employee_payroll values(15,'Teria','2021-04-09','Female','Mumbai','9874957520','Temarketing','15000','1000','500','0','13500')";
+            try 
+            {
+                statement.executeUpdate(query3);
+                System.out.println("Insertion Operation is successfull");
+            }catch (SQLException e){
+                System.out.println("Insertion Operation is failed");
+            }
+            
             // execute SQL query
             String query = "SELECT * FROM employee_payroll;";
             ResultSet resultSet = statement.executeQuery(query);
